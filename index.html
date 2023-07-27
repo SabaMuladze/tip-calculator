@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+  <header>
+    <img src="images/logo.svg" alt="">
+  </header>
+  <main>
+    <div class="cont">
+      <label for="bil">Bill</label><br>
+      <div class="bill-div">
+        <img class="icon" src="images/icon-dollar.svg" alt=""> <input id="bill" type="number" placeholder="0">
+      </div>
+      <label class="lbl-tip" for="select-tip">Select Tip %</label>
+      <div class="select-tip">
+        <button value="5" class="tip">5%</button>
+        <button value="10" class="tip">10%</button>
+        <button value="15" class="tip">15%</button>
+        <button value="25" class="tip">25%</button>
+        <button value="50" class="tip">50%</button>
+        <input class="cust" id="custom" type="number" placeholder="Custom" value>
+      </div>
+      <label for="people">Number of People</label><span class="red-alert"></span><br>
+      <div class="bill-div bill-div2">
+        <img class="icon" src="images/icon-person.svg" alt=""> <input id="people" type="number" placeholder="0">
+      </div>
+    </div>
+    <div class="cont-green">
+      <div class="results">
+        <div>
+          <p>Tip Amount</p>
+          <span>/ person</span>
+        </div>
+        <div>
+          <h2 class="tip-amount"></h2>
+        </div>
+      </div>
+      <div class="results res2">
+        <div>
+          <p>Total</p>
+          <span>/ person</span>
+        </div>
+        <div>
+          <h2 class="total"></h2>
+        </div>
+
+
+
+      </div>
+      <button onclick="resetAll(),resetFunc()" disabled class="reset">RESET</button>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

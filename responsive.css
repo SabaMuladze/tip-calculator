@@ -1,0 +1,68 @@
+@media (min-width:768px) {
+
+    main {
+        border-radius: 25px;
+    }
+
+    header {
+        margin: 80px 0 60px 0;
+    }
+
+    .reset {
+        margin-top: 75px;
+        margin: 75px auto 0 auto;
+    }
+
+}
+
+
+@media (min-width:1024px) {
+
+    main {
+        width: 920px;
+        display: flex;
+        height: 460px;
+    }
+
+    header {
+        margin: 10.3rem 0 87px 0;
+    }
+
+    .select-tip {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 16px;
+        width: 100%;
+        margin: 1rem 0 2rem 0;
+    }
+
+    .cont {
+        width: 50%;
+    }
+
+    .cont-green {
+        width: 50%;
+        margin-left: 3rem;
+        position: relative;
+    }
+
+    .reset {
+        bottom: 2.5rem;
+        width: 90%;
+        position: absolute;
+    }
+
+    .reset:hover {
+        background-color: rgba(159, 232, 223, 1);
+        color: #00474B;
+    }
+
+    .tip:hover {
+        color: #00474B;
+        background-color: rgba(159, 232, 223, 1);
+    }
+
+
+
+
+}
