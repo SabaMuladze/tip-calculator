@@ -10,7 +10,6 @@ const btns = document.querySelectorAll('.tip, .cust');
 const reset = document.querySelector('.reset')
 
 
-
 inputBoxes.forEach(inputDv => {
 
     inputs.forEach(input => {
@@ -24,11 +23,10 @@ inputBoxes.forEach(inputDv => {
             input.classList.remove('active')
 
         })
-        console.log(input.value);
         function valid() {
-            if (input.value == 0) {
+            if (people.value == 0) {
                 redAlert.textContent = "Can't be zero"
-                inputDv.style.borderColor = '#E17052';
+                people.parentElement.style.borderColor = '#E17052';
 
             }
             else {
@@ -38,30 +36,19 @@ inputBoxes.forEach(inputDv => {
 
             resetFunc();
         }
-        input.addEventListener('input', valid);
+        people.addEventListener('input', valid);
         resetFunc();
     });
 
 });
 
+people.addEventListener('input', calc)
+billInpt.addEventListener('input', calc)
+
 btns.forEach(btnex => {
-    var btn = btnex.value;
-
-
-
-
     btnex.addEventListener('click', () => {
         document.querySelector('.ac')?.classList.remove('ac');
         btnex.classList.add('ac');
-
-        var n = billInpt.value;
-        var p = people.value;
-        let resultAmount = n * (btn / 100) / p;
-        let resultTotal = (n / 1 + n * (btn / 100)) / p;
-
-        tipAmount.textContent = `$${resultAmount.toFixed(2)}`;
-        total.textContent = `$${resultTotal.toFixed(2)}`;
-
 
     })
 
@@ -106,3 +93,75 @@ function resetFunc() {
 }
 
 
+function calc() {
+
+    btns.forEach(btn => {
+
+        if (btn.classList.contains('ac')) {
+
+            var n = billInpt.value;
+            var p = people.value;
+            let resultAmount = n * (btn.value / 100) / p;
+            let resultTotal = (n / 1 + n * (btn.value / 100)) / p;
+
+            tipAmount.textContent = `$${resultAmount.toFixed(2)}`;
+            total.textContent = `$${resultTotal.toFixed(2)}`;
+
+            console.log(btn.value);
+
+        }
+        else {
+            btn.addEventListener('click', () => {
+                var n = billInpt.value;
+                var p = people.value;
+                let resultAmount = n * (btn.value / 100) / p;
+                let resultTotal = (n / 1 + n * (btn.value / 100)) / p;
+
+                tipAmount.textContent = `$${resultAmount.toFixed(2)}`;
+                total.textContent = `$${resultTotal.toFixed(2)}`;
+
+                console.log(btn.value);
+            })
+        }
+
+
+
+        // var n = billInpt.value;
+        // var p = people.value;
+        // let resultAmount = n * (btn.value / 100) / p;
+        // let resultTotal = (n / 1 + n * (btn.value / 100)) / p;
+
+        // tipAmount.textContent = `$${resultAmount}`;
+        // total.textContent = `$${resultTotal}`;
+
+
+    });
+
+
+
+
+}
+
+
+
+
+// var n = billInpt.value;
+//         var p = people.value;
+//         let resultAmount = n * (btn / 100) / p;
+//         let resultTotal = (n / 1 + n * (btn / 100)) / p;
+
+//         tipAmount.textContent = `$${resultAmount.toFixed(2)}`;
+//         total.textContent = `$${resultTotal.toFixed(2)}`;
+
+calc();
+
+
+function val() {
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            return btn.value;
+        })
+    })
+
+}
