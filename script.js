@@ -123,18 +123,6 @@ function calc() {
                 console.log(btn.value);
             })
         }
-
-
-
-        // var n = billInpt.value;
-        // var p = people.value;
-        // let resultAmount = n * (btn.value / 100) / p;
-        // let resultTotal = (n / 1 + n * (btn.value / 100)) / p;
-
-        // tipAmount.textContent = `$${resultAmount}`;
-        // total.textContent = `$${resultTotal}`;
-
-
     });
 
 
@@ -145,23 +133,4 @@ function calc() {
 
 
 
-// var n = billInpt.value;
-//         var p = people.value;
-//         let resultAmount = n * (btn / 100) / p;
-//         let resultTotal = (n / 1 + n * (btn / 100)) / p;
 
-//         tipAmount.textContent = `$${resultAmount.toFixed(2)}`;
-//         total.textContent = `$${resultTotal.toFixed(2)}`;
-
-calc();
-
-
-function val() {
-
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            return btn.value;
-        })
-    })
-
-}
