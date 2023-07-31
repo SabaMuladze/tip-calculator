@@ -110,6 +110,9 @@ function calc() {
             console.log(btn.value);
 
         }
+        else if (people.value === '') {
+            people.value++
+        }
         else {
             btn.addEventListener('click', () => {
                 var n = billInpt.value;
