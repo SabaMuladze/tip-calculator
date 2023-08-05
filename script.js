@@ -7,8 +7,10 @@ let total = document.querySelector('.total');
 let billInpt = document.querySelector('#bill');
 let people = document.querySelector("#people");
 const btns = document.querySelectorAll('.tip, .cust');
-const reset = document.querySelector('.reset')
+const reset = document.querySelector('.reset');
 
+let n = billInpt.value;
+let p = people.value;
 
 inputBoxes.forEach(inputDv => {
 
@@ -24,9 +26,11 @@ inputBoxes.forEach(inputDv => {
 
         })
         function valid() {
-            if (people.value == 0) {
+            if (people.value < 1) {
                 redAlert.textContent = "Can't be zero"
                 people.parentElement.style.borderColor = '#E17052';
+                total.textContent = '$0.00';
+                tipAmount.textContent = '$0.00';
 
             }
             else {
@@ -52,26 +56,30 @@ btns.forEach(btnex => {
 
     })
 
-
     custom.addEventListener('input', () => {
         var n = billInpt.value;
         var p = people.value;
-        let resultCustomAmount = n * (custom.value / 100) / p;
-        let resultCustomTotal = (n / 1 + n * (custom.value / 100)) / p;
+        if (people.value >= 1) {
+            let resultCustomAmount = n * (custom.value / 100) / p;
+            let resultCustomTotal = (n / 1 + n * (custom.value / 100)) / p;
 
-        tipAmount.textContent = `$${resultCustomAmount.toFixed(2)}`;
-        total.textContent = `$${resultCustomTotal.toFixed(2)}`;
+            tipAmount.textContent = `$${resultCustomAmount.toFixed(2)}`;
+            total.textContent = `$${resultCustomTotal.toFixed(2)}`;
+        }
 
 
     })
+
+
+
 
 
 })
 
 
 function resetAll() {
-    tipAmount.textContent = `$0`;
-    total.textContent = `$0`;
+    tipAmount.textContent = `$0.00`;
+    total.textContent = `$0.00`;
     document.querySelector('.ac')?.classList.remove('ac');
     billInpt.value = '';
     people.value = '';
@@ -97,7 +105,7 @@ function calc() {
 
     btns.forEach(btn => {
 
-        if (btn.classList.contains('ac')) {
+        if (btn.classList.contains('ac') && people.value >= 1) {
 
             var n = billInpt.value;
             var p = people.value;
@@ -110,10 +118,11 @@ function calc() {
             console.log(btn.value);
 
         }
-        else if (people.value === '') {
-            people.value++
+        else if (people.value < 1) {
+            total.textContent = '$0.00';
+            tipAmount.textContent = '$0.00';
         }
-        else {
+        else if (btn.classList.contains('ac' == false && people.value >= 1)) {
             btn.addEventListener('click', () => {
                 var n = billInpt.value;
                 var p = people.value;
@@ -133,6 +142,13 @@ function calc() {
 
 }
 
+function zero() {
+    if (people.value < 1) {
+        total.textContent = '$0.00';
+        tipAmount.textContent = '$0.00';
+    }
+
+}
 
 
 

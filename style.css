@@ -155,6 +155,22 @@ h2 {
     color: #26C2AE;
     font-size: 32px;
     letter-spacing: -0.667px;
+    max-width: 240px;
+    overflow-x: auto;
+
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #26C2AE !important;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #02686d7e !important;
 }
 
 .red-alert {
