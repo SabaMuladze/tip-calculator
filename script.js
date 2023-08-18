@@ -122,7 +122,7 @@ function calc() {
             total.textContent = '$0.00';
             tipAmount.textContent = '$0.00';
         }
-        else if (btn.classList.contains('ac' == false && people.value >= 1)) {
+        else if (people.value >= 1) {
             btn.addEventListener('click', () => {
                 var n = billInpt.value;
                 var p = people.value;
